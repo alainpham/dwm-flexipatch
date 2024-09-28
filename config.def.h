@@ -897,7 +897,8 @@ static const char *dmenucmd[] = {
 static const char *termcmd[]  = { "st", NULL };
 static const char *browser[]   = { "google-chrome", NULL };
 static const char *filemanager[] = { "thunar", NULL };
-
+static const char *screenshot[] = { "flameshot", "gui", NULL };
+static const char *screenrec[] = { "obs", NULL };
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
@@ -931,6 +932,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_x,          spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_w,          spawn,                  {.v = browser } },
 	{ MODKEY,                       XK_e,          spawn,                  {.v = filemanager } },
+	{ 0,                            XK_Print,      spawn,                  {.v = screenshot } },
+	{ MODKEY,                       XK_r,          spawn,                  {.v = screenrec } },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
