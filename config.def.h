@@ -898,6 +898,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browser[]   = { "google-chrome", NULL };
 static const char *filemanager[] = { "thunar", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
+static const char *winshot[] = { "/usr/local/bin/winshot.sh", NULL };
 static const char *screenrec[] = { "obs", NULL };
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -933,6 +934,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_w,          spawn,                  {.v = browser } },
 	{ MODKEY,                       XK_e,          spawn,                  {.v = filemanager } },
 	{ 0,                            XK_Print,      spawn,                  {.v = screenshot } },
+	{ Mod1Mask,                     XK_Print,      spawn,                  {.v = winshot } },
 	{ MODKEY,                       XK_r,          spawn,                  {.v = screenrec } },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
