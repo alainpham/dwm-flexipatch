@@ -513,9 +513,6 @@ static const int tagrows = 2;
  */
 static const Rule rules[] = {
     // class	instance	title										wintype		tags mask	isfloating	monitor
-    { "zoom",	NULL,		"Zoom Workplace - Licensed account",		NULL,    	1 << 3,    	0,			-1 },
-    { "zoom",	NULL,		"Settings",									NULL,    	1 << 3,    	1,			-1 },
-    { "zoom",	NULL,		"Meeting",									NULL,    	0, 		   	0,			-1 },
 
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -531,8 +528,9 @@ static const Rule rules[] = {
 	// RULE(.class = "Firefox", .tags = 1 << 7)
 	// RULE(.class = "Google-chrome", .tags = 1 << 1)
 	RULE(.class = "Slack", .tags = 1 << 2)
-	RULE(.title = "Meeting", .tags = 1 << 3)
+	RULE(.title = "Zoom Workplace - Licensed account", .tags = 1 << 3)
 	RULE(.class = "obs", .tags = 1 << 4)
+
 
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
@@ -664,7 +662,7 @@ static const BarRule barrules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 #if FLEXTILE_DELUXE_LAYOUT
 static const int nstack      = 0;    /* number of clients in primary stack area */
@@ -1017,8 +1015,8 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_i,          incnstack,              {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_u,          incnstack,              {.i = -1 } },
 	#endif // FLEXTILE_DELUXE_LAYOUT
-	{ MODKEY,                       XK_y,          setmfact,               {.f = -0.05} },
-	{ MODKEY,                       XK_o,          setmfact,               {.f = +0.05} },
+	{ MODKEY,                       XK_KP_Add,          setmfact,               {.f = -0.05} },
+	{ MODKEY,                       XK_KP_Subtract,     setmfact,               {.f = +0.05} },
 	#if CFACTS_PATCH
 	{ MODKEY|ShiftMask,             XK_h,          setcfact,               {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,          setcfact,               {.f = -0.25} },
@@ -1337,9 +1335,8 @@ static const Key keys[] = {
 	{ Mod3Mask|Mod1Mask,            XK_period,       floatpos,               {.v = " 1p  1p" } }, // ↘
 	#endif // FLOATPOS_PATCH
 	#if SETBORDERPX_PATCH
-	{ MODKEY|ControlMask,           XK_minus,      setborderpx,            {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_plus,       setborderpx,            {.i = +1 } },
-	{ MODKEY|ControlMask,           XK_numbersign, setborderpx,            {.i = 0 } },
+	{ MODKEY,           			XK_KP_Insert,    	setborderpx,           	{.i = 0 } },
+	{ MODKEY,           			XK_KP_Left,       	setborderpx,            {.i = 4 } },
 	#endif // SETBORDERPX_PATCH
 	#if CYCLELAYOUTS_PATCH
 	{ MODKEY|ShiftMask, XK_l,      cyclelayout,            {.i = -1 } },
