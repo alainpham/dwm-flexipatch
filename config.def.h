@@ -524,7 +524,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	// RULE(.class = "Gimp", .tags = 1 << 4)
 	// RULE(.class = "Firefox", .tags = 1 << 7)
-	RULE(.class = "Google-chrome", .tags = 1 << 1)
+	// RULE(.class = "Google-chrome", .tags = 1 << 1)
 	RULE(.class = "Slack", .tags = 1 << 2)
 	RULE(.class = "zoom", .tags = 1 << 3)
 	RULE(.class = "obs", .tags = 1 << 4)
@@ -677,10 +677,10 @@ static const int scrollsensetivity = 30; /* 1 means resize window by 1 pixel for
 /* resizemousescroll direction argument list */
 static const int scrollargs[][2] = {
 	/* width change         height change */
-	{ +scrollsensetivity,	0 },
 	{ -scrollsensetivity,	0 },
-	{ 0, 				  	+scrollsensetivity },
-	{ 0, 					-scrollsensetivity },
+	{ +scrollsensetivity,	0 },
+	{ 0, 				  	-scrollsensetivity },
+	{ 0, 					+scrollsensetivity },
 };
 #endif // TAPRESIZE_PATCH
 
@@ -1194,8 +1194,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,      tagmon,                 {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_semicolon,  tagmon,                 {.i = +1 } },
 	#if FOCUSADJACENTTAG_PATCH
-	{ MODKEY|ControlMask,           XK_Left,       viewtoleft,             {0} }, // note keybinding conflict with focusdir
-	{ MODKEY|ControlMask,           XK_Right,      viewtoright,            {0} }, // note keybinding conflict with focusdir
+	{ MODKEY,                       XK_Left,       viewtoleft,             {0} }, // note keybinding conflict with focusdir
+	{ MODKEY,                       XK_Right,      viewtoright,            {0} }, // note keybinding conflict with focusdir
 	// { MODKEY|ShiftMask,             XK_Left,       tagtoleft,              {0} }, // note keybinding conflict with shifttag
 	// { MODKEY|ShiftMask,             XK_Right,      tagtoright,             {0} }, // note keybinding conflict with shifttag
 	{ MODKEY|ShiftMask,             XK_Left,       tagandviewtoleft,              {0} }, // note keybinding conflict with shifttag

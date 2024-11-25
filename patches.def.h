@@ -496,7 +496,7 @@
  * than the original ~/.dwm folder.
  * https://dwm.suckless.org/patches/autostart/
  */
-#define AUTOSTART_PATCH 0
+#define AUTOSTART_PATCH 1
 
 /* By default, windows that are not visible when requesting a resize/move will not
  * get resized/moved. With this patch, they will.
@@ -677,7 +677,7 @@
 /* Allows focusing on clients based on direction (up, down, left, right) instead of client order.
  * https://github.com/bakkeby/patches/wiki/focusdir/
  */
-#define FOCUSDIR_PATCH 1
+#define FOCUSDIR_PATCH 0
 
 /* When changing tags, closing windows or moving clients out of view then focus will revert to the
  * client window that remains under the mouse cursor rather than the most recently focused window.
@@ -917,7 +917,7 @@
  * monitor (default).
  * https://dwm.suckless.org/patches/pertag/
  */
-#define PERTAG_PATCH 0
+#define PERTAG_PATCH 1
 
 /* Option to enable gaps on a per tag basis rather than globally.
  * Depends on both pertag and vanitygaps patches being enabled.
@@ -1080,7 +1080,7 @@
 /* This patch allow clients to keep focus when being sent to another monitor.
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-sendmon_keepfocus-6.2.diff
  */
-#define SENDMON_KEEPFOCUS_PATCH 0
+#define SENDMON_KEEPFOCUS_PATCH 1
 
 /* This patch allows border pixels to be changed during runtime.
  * https://dwm.suckless.org/patches/setborderpx/
@@ -1157,7 +1157,7 @@
  * comes to focusmon, tagmon and similar functionality.
  * https://www.mail-archive.com/hackers@suckless.org/msg09400.html
  */
-#define SORTSCREENS_PATCH 0
+#define SORTSCREENS_PATCH 1
 
 /* Spawns programs from currently focused client's working directory.
  * https://dwm.suckless.org/patches/spawn_cwd/
@@ -1212,7 +1212,7 @@
  * the previously used window.
  * https://dwm.suckless.org/patches/swapfocus/
  */
-#define SWAPFOCUS_PATCH 0
+#define SWAPFOCUS_PATCH 1
 
 /* This patch allows swapping the contents of the currently selected tag with another tag using
  * keyboard shortcuts.
@@ -1249,7 +1249,7 @@
  * Note that fancybar, awesomebar, bartabgroups and similar patches make the tab patch redundant.
  * https://dwm.suckless.org/patches/tab/
  */
-#define TAB_PATCH 0
+#define TAB_PATCH 1
 
 /* Adds keyboard shortcuts to move all (or only floating) windows from one tag to another.
  * https://dwm.suckless.org/patches/tagall/
@@ -1309,7 +1309,7 @@
  * two-finger scrolling is configured in libinput.
  * https://dwm.suckless.org/patches/tapresize/
  */
-#define TAPRESIZE_PATCH 0
+#define TAPRESIZE_PATCH 1
 
 /* This patch allows you to toggle fullscreen on and off using a single shortcut key.
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-togglefullscreen-6.2.diff
