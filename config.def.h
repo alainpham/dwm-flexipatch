@@ -530,7 +530,7 @@ static const Rule rules[] = {
 	// RULE(.class = "Firefox", .tags = 1 << 7)
 	// RULE(.class = "Google-chrome", .tags = 1 << 1)
 	RULE(.class = "Slack", .tags = 1 << 2)
-	RULE(.title = "Zoom Workplace - Licensed account", .tags = 1 << 3)
+	RULE(.class = "zoom", .tags = 1 << 3)
 	RULE(.class = "obs", .tags = 1 << 4)
 
 
