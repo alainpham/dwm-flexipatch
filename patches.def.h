@@ -576,7 +576,7 @@
 /* The cyclelayouts patch lets you cycle through all your layouts.
  * https://dwm.suckless.org/patches/cyclelayouts/
  */
-#define CYCLELAYOUTS_PATCH 0
+#define CYCLELAYOUTS_PATCH 1
 
 /* Make dwm respect _MOTIF_WM_HINTS property, and not draw borders around windows requesting
  * for it. Some applications use this property to notify window managers to not draw window
@@ -805,7 +805,7 @@
  * used for the main monitor. E.g. normal vertical split for main monitor and
  * horizontal split for the second.
  */
-#define MONITOR_RULES_PATCH 0
+#define MONITOR_RULES_PATCH 1
 
 /* Always display the the monocle-symbol as defined in config.h if the monocle-layout
  * is activated. Do not display the number of open clients in the current tag.
@@ -1466,7 +1466,7 @@
 /* Centered floating master layout.
  * https://dwm.suckless.org/patches/centeredmaster/
  */
-#define CENTEREDFLOATINGMASTER_LAYOUT 0
+#define CENTEREDFLOATINGMASTER_LAYOUT 1
 
 /* Same as the default tile layout except clients in the master area are arranged in
  * columns (i.e. left to right).
@@ -1477,7 +1477,7 @@
 /* Deck layout.
  * https://dwm.suckless.org/patches/deck/
  */
-#define DECK_LAYOUT 0
+#define DECK_LAYOUT 1
 
 /* Fibonacci dwindle layout.
  * https://dwm.suckless.org/patches/fibonacci/

@@ -512,6 +512,11 @@ static const int tagrows = 2;
  * the patches you enable.
  */
 static const Rule rules[] = {
+    // class	instance	title										wintype		tags mask	isfloating	monitor
+    { "zoom",	NULL,		"Zoom Workplace - Licensed account",		NULL,    	1 << 3,    	0,			-1 },
+    { "zoom",	NULL,		"Settings",									NULL,    	1 << 3,    	1,			-1 },
+    { "zoom",	NULL,		"Meeting",									NULL,    	0, 		   	0,			-1 },
+
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
@@ -526,7 +531,7 @@ static const Rule rules[] = {
 	// RULE(.class = "Firefox", .tags = 1 << 7)
 	// RULE(.class = "Google-chrome", .tags = 1 << 1)
 	RULE(.class = "Slack", .tags = 1 << 2)
-	RULE(.class = "zoom", .tags = 1 << 3)
+	RULE(.title = "Meeting", .tags = 1 << 3)
 	RULE(.class = "obs", .tags = 1 << 4)
 
 	#if RENAMED_SCRATCHPADS_PATCH
@@ -539,9 +544,12 @@ static const Rule rules[] = {
 #if MONITOR_RULES_PATCH
 #if PERTAG_PATCH
 static const MonitorRule monrules[] = {
-	/* monitor  tag   layout  mfact  nmaster  showbar  topbar */
-	{  1,       -1,   2,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor
-	{  -1,      -1,   0,      -1,    -1,      -1,      -1     }, // default
+	/* monitor  tag		layout	mfact	nmaster  showbar  topbar */
+	// {  1,       -1,   2,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor
+	// {  -1,     4,   	2,		-1,		-1,      -1,      -1     }, // zoom is monocle
+ 	// {  -1,     5,   	2,		-1,		-1,      -1,      -1     }, // obs is monocle
+	 {  -1,   	-1,   	0,      -1,		-1,      -1,      -1     }, // default
+
 };
 #else
 static const MonitorRule monrules[] = {
@@ -1334,8 +1342,8 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_numbersign, setborderpx,            {.i = 0 } },
 	#endif // SETBORDERPX_PATCH
 	#if CYCLELAYOUTS_PATCH
-	{ MODKEY|ControlMask,           XK_comma,      cyclelayout,            {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_period,     cyclelayout,            {.i = +1 } },
+	{ MODKEY|ShiftMask, XK_l,      cyclelayout,            {.i = -1 } },
+	{ MODKEY,           XK_l,      cyclelayout,            {.i = +1 } },
 	#endif // CYCLELAYOUTS_PATCH
 	#if MPDCONTROL_PATCH
 	{ MODKEY,                       XK_F1,         mpdchange,              {.i = -1} },
