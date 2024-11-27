@@ -937,6 +937,7 @@ static const Key on_empty_keys[] = {
 };
 #endif // ON_EMPTY_KEYS_PATCH
 
+#include <X11/XF86keysym.h>
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
 	#if KEYMODES_PATCH
@@ -949,9 +950,19 @@ static const Key keys[] = {
 	{ 0,                            XK_Print,      spawn,                  {.v = screenshot } },
 	{ Mod1Mask,                     XK_Print,      spawn,                  {.v = winshot } },
 	{ MODKEY,                       XK_r,          spawn,                  {.v = screenrec } },
+	// screen brightness
+	{ 0,                            XF86XK_MonBrightnessUp,   spawn,       SHCMD("brightnessctl s 10%+") },
+	{ 0,                            XF86XK_MonBrightnessDown, spawn,       SHCMD("brightnessctl s 10%-") },
+	//sound
 	{ Mod1Mask,                     XK_KP_Add,     spawn,                  SHCMD("pactl set-sink-volume cspeakers +5%; kill -44 $(pidof dwmblocks)") },
+	{0 ,                            XF86XK_AudioRaiseVolume,spawn,         SHCMD("pactl set-sink-volume cspeakers +5%; kill -44 $(pidof dwmblocks)") },
+
 	{ Mod1Mask,                     XK_KP_Subtract,spawn,                  SHCMD("pactl set-sink-volume cspeakers -5%; kill -44 $(pidof dwmblocks)") },
+	{0 , 							XF86XK_AudioLowerVolume,spawn,         SHCMD("pactl set-sink-volume cspeakers -5%; kill -44 $(pidof dwmblocks)") },
+	//mute desktop
 	{ Mod1Mask,                     XK_KP_Left,    spawn,                  SHCMD("pactl set-sink-mute from-desktop toggle; kill -44 $(pidof dwmblocks)") },
+	{ 0,                     		XF86XK_AudioMute,    spawn,            SHCMD("pactl set-sink-mute from-desktop toggle; kill -44 $(pidof dwmblocks)") },
+
 	{ Mod1Mask,                     XK_KP_Begin,   spawn,                  SHCMD("pactl set-sink-mute from-caller toggle; kill -44 $(pidof dwmblocks)") },
 	{ Mod1Mask,                     XK_KP_End,     spawn,                  SHCMD("pactl set-source-mute mic01-processed toggle; kill -44 $(pidof dwmblocks)") },
 	{ Mod1Mask,                     XK_KP_Down,    spawn,                  SHCMD("pactl set-source-mute mic02-processed toggle; kill -44 $(pidof dwmblocks)") },
@@ -1017,8 +1028,8 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_i,          incnstack,              {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_u,          incnstack,              {.i = -1 } },
 	#endif // FLEXTILE_DELUXE_LAYOUT
-	{ MODKEY,                       XK_KP_Add,          setmfact,               {.f = -0.05} },
-	{ MODKEY,                       XK_KP_Subtract,     setmfact,               {.f = +0.05} },
+	{ MODKEY,                       XK_KP_Add,          setmfact,               {.f = +0.05} },
+	{ MODKEY,                       XK_KP_Subtract,     setmfact,               {.f = -0.05} },
 	#if CFACTS_PATCH
 	{ MODKEY|ShiftMask,             XK_h,          setcfact,               {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,          setcfact,               {.f = -0.25} },
