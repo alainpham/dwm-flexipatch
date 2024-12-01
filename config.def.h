@@ -15,7 +15,7 @@ static const unsigned int borderpx       = 4;   /* border pixel of windows */
 /* This allows the bar border size to be explicitly set separately from borderpx.
  * If left as 0 then it will default to the borderpx value of the monitor and will
  * automatically update with setborderpx. */
-static const unsigned int barborderpx    = 4;  /* border pixel of bar */
+static const unsigned int barborderpx    = 2;  /* border pixel of bar */
 #endif // BAR_BORDER_PATCH
 static const unsigned int snap           = 32;  /* snap pixel */
 #if SWALLOW_PATCH
@@ -168,9 +168,10 @@ static const char font[]                 = "monospace 10";
 #else
 //static const char *fonts[]               = { "ComicShannsMono Nerd Font Mono:size=14" };
 //static const char *fonts[]               = { "Overpass Nerd Font:size=12" };
-static const char *fonts[]               = { "Noto Sans:size=14" };
+//static const char *fonts[]               = { "NotoSansM NF:size=14","Noto Color Emoji:size=14" };
+static const char *fonts[]               = { "NotoSans NF:size=12" };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "Noto Sans:size=14";
+static const char dmenufont[]            = "NotoSans NF:size=12";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -476,7 +477,7 @@ static char tagicons[][NUMTAGS][MAX_TAGLEN] =
 static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
 {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5󰄃", "6", "7", "8", "9" },
+	[DEFAULT_TAGS]        = { "🔥", "🌍", "💬", "☎️", "🎙", "🚀", "7", "8", "9" },
 	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
@@ -531,6 +532,9 @@ static const Rule rules[] = {
 	// RULE(.class = "Google-chrome", .tags = 1 << 1)
 	RULE(.class = "Slack", .tags = 1 << 2)
 	RULE(.class = "zoom", .tags = 1 << 3)
+	RULE(.class = "teams-for-linux", .tags = 1 << 3)
+	RULE(.class = "Caprine", .tags = 1 << 3)
+	RULE(.class = "ViberPC", .tags = 1 << 3)
 	RULE(.class = "obs", .tags = 1 << 4)
 
 
@@ -895,7 +899,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = {
 	"dmenu_run",
 	#if !NODMENU_PATCH
-	"-m", dmenumon,
+	//"-m", dmenumon,
 	#endif // NODMENU_PATCH
 	"-fn", dmenufont,
 	"-nb", normbgcolor,
@@ -966,6 +970,8 @@ static const Key keys[] = {
 	{ Mod1Mask,                     XK_KP_Begin,   spawn,                  SHCMD("pactl set-sink-mute from-caller toggle; kill -44 $(pidof dwmblocks)") },
 	{ Mod1Mask,                     XK_KP_End,     spawn,                  SHCMD("pactl set-source-mute mic01-processed toggle; kill -44 $(pidof dwmblocks)") },
 	{ Mod1Mask,                     XK_KP_Down,    spawn,                  SHCMD("pactl set-source-mute mic02-processed toggle; kill -44 $(pidof dwmblocks)") },
+	// notifications
+	{ MODKEY,                     	XK_n,   	spawn,                 SHCMD("dunstctl set-paused toggle; kill -43 $(pidof dwmblocks)") },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
@@ -1003,7 +1009,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Down,       placedir,               {.i = 3 } }, // down
 	#endif // PLACEDIR_PATCH
 	#if SWAPFOCUS_PATCH && PERTAG_PATCH
-	{ MODKEY,                       XK_s,          swapfocus,              {.i = -1 } },
+	{ Mod1Mask,                       XK_twosuperior,          swapfocus,              {.i = -1 } },
 	#endif // SWAPFOCUS_PATCH
 	#if SWITCHCOL_PATCH
 	{ MODKEY,                       XK_v,          switchcol,              {0} },
@@ -1352,8 +1358,8 @@ static const Key keys[] = {
 	{ MODKEY,           			XK_KP_Left,       	setborderpx,            {.i = 4 } },
 	#endif // SETBORDERPX_PATCH
 	#if CYCLELAYOUTS_PATCH
-	{ MODKEY|ShiftMask, XK_l,      cyclelayout,            {.i = -1 } },
-	{ MODKEY,           XK_l,      cyclelayout,            {.i = +1 } },
+	{ MODKEY|ShiftMask, 			XK_twosuperior,      cyclelayout,            {.i = -1 } },
+	{ MODKEY,           			XK_twosuperior,      cyclelayout,            {.i = +1 } },
 	#endif // CYCLELAYOUTS_PATCH
 	#if MPDCONTROL_PATCH
 	{ MODKEY,                       XK_F1,         mpdchange,              {.i = -1} },
