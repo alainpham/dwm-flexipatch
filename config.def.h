@@ -942,6 +942,10 @@ static const Key on_empty_keys[] = {
 #endif // ON_EMPTY_KEYS_PATCH
 
 #include <X11/XF86keysym.h>
+
+#define VOLUP "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id +5%; kill -44 $(pidof dwmblocks)"
+#define VOLDN "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id -5%; kill -44 $(pidof dwmblocks)"
+
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
 	#if KEYMODES_PATCH
@@ -958,11 +962,11 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,       SHCMD("brightnessctl s 10%+") },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,       SHCMD("brightnessctl s 10%-") },
 	//sound
-	{ Mod1Mask,                     XK_KP_Add,     spawn,                  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)") },
-	{0 ,                            XF86XK_AudioRaiseVolume,spawn,         SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)") },
+	{ Mod1Mask,                     XK_KP_Add,     spawn,                  SHCMD(VOLUP) },
+	{0 ,                            XF86XK_AudioRaiseVolume,spawn,         SHCMD(VOLUP) },
 
-	{ Mod1Mask,                     XK_KP_Subtract,spawn,                  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)") },
-	{0 , 							XF86XK_AudioLowerVolume,spawn,         SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)") },
+	{ Mod1Mask,                     XK_KP_Subtract,spawn,                  SHCMD(VOLDN) },
+	{0 , 							XF86XK_AudioLowerVolume,spawn,         SHCMD(VOLDN) },
 	//mute desktop
 	{ Mod1Mask,                     XK_KP_Left,    spawn,                  SHCMD("pactl set-sink-mute from-desktop toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0,                     		XF86XK_AudioMute,    spawn,            SHCMD("pactl set-sink-mute from-desktop toggle; kill -44 $(pidof dwmblocks)") },
