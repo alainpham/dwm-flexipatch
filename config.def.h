@@ -958,11 +958,11 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,       SHCMD("brightnessctl s 10%+") },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,       SHCMD("brightnessctl s 10%-") },
 	//sound
-	{ Mod1Mask,                     XK_KP_Add,     spawn,                  SHCMD("pactl set-sink-volume cspeakers +5%; kill -44 $(pidof dwmblocks)") },
-	{0 ,                            XF86XK_AudioRaiseVolume,spawn,         SHCMD("pactl set-sink-volume cspeakers +5%; kill -44 $(pidof dwmblocks)") },
+	{ Mod1Mask,                     XK_KP_Add,     spawn,                  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)") },
+	{0 ,                            XF86XK_AudioRaiseVolume,spawn,         SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)") },
 
-	{ Mod1Mask,                     XK_KP_Subtract,spawn,                  SHCMD("pactl set-sink-volume cspeakers -5%; kill -44 $(pidof dwmblocks)") },
-	{0 , 							XF86XK_AudioLowerVolume,spawn,         SHCMD("pactl set-sink-volume cspeakers -5%; kill -44 $(pidof dwmblocks)") },
+	{ Mod1Mask,                     XK_KP_Subtract,spawn,                  SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)") },
+	{0 , 							XF86XK_AudioLowerVolume,spawn,         SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)") },
 	//mute desktop
 	{ Mod1Mask,                     XK_KP_Left,    spawn,                  SHCMD("pactl set-sink-mute from-desktop toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0,                     		XF86XK_AudioMute,    spawn,            SHCMD("pactl set-sink-mute from-desktop toggle; kill -44 $(pidof dwmblocks)") },
