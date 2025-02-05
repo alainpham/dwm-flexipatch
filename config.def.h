@@ -917,6 +917,7 @@ static const char *filemanager[] = { "thunar", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
 static const char *winshot[] = { "/usr/local/bin/winshot.sh", NULL };
 static const char *screenrec[] = { "obs", NULL };
+static const char *slock[] = { "slock", NULL };
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
@@ -958,6 +959,7 @@ static const Key keys[] = {
 	{ 0,                            XK_Print,      spawn,                  {.v = screenshot } },
 	{ Mod1Mask,                     XK_Print,      spawn,                  {.v = winshot } },
 	{ MODKEY,                       XK_r,          spawn,                  {.v = screenrec } },
+	{ MODKEY,                       XK_l,          spawn,                  {.v = slock } },
 	// screen brightness
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,       SHCMD("brightnessctl s 15+; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/255))%") },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,       SHCMD("brightnessctl s 15-; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/255))%") },
