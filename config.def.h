@@ -477,7 +477,7 @@ static char tagicons[][NUMTAGS][MAX_TAGLEN] =
 static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
 {
-	[DEFAULT_TAGS]        = { "🔥", "🌍", "🚀", "💬", "☎️", "🎙", "7", "8", "9" },
+	[DEFAULT_TAGS]        = { "", "", "󰑣","󱄟" , "󰭻", "", "", "8", "9" },
 	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
@@ -530,12 +530,12 @@ static const Rule rules[] = {
 	// RULE(.class = "Gimp", .tags = 1 << 4)
 	// RULE(.class = "Firefox", .tags = 1 << 7)
 	// RULE(.class = "Google-chrome", .tags = 1 << 1)
-	RULE(.class = "Slack", .tags = 1 << 3)
-	RULE(.class = "zoom", .tags = 1 << 4)
-	RULE(.class = "teams-for-linux", .tags = 1 << 4)
-	RULE(.class = "Caprine", .tags = 1 << 4)
-	RULE(.class = "ViberPC", .tags = 1 << 4)
-	RULE(.class = "obs", .tags = 1 << 5)
+	RULE(.class = "Slack", .tags = 1 << 4)
+	RULE(.class = "zoom", .tags = 1 << 5)
+	RULE(.class = "teams-for-linux", .tags = 1 << 5)
+	RULE(.class = "Caprine", .tags = 1 << 5)
+	RULE(.class = "ViberPC", .tags = 1 << 5)
+	RULE(.class = "obs", .tags = 1 << 6)
 
 
 	#if RENAMED_SCRATCHPADS_PATCH
