@@ -961,8 +961,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,          spawn,                  {.v = screenrec } },
 	{ MODKEY,                       XK_l,          spawn,                  {.v = slock } },
 	// screen brightness
-	{ 0,                            XF86XK_MonBrightnessUp,   spawn,       SHCMD("brightnessctl s 15+; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/255))%") },
-	{ 0,                            XF86XK_MonBrightnessDown, spawn,       SHCMD("brightnessctl s 15-; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/255))%") },
+	{ 0,                            XF86XK_MonBrightnessUp,   spawn,       SHCMD("brightnessctl s 10%+; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%") },
+	{ 0,                            XF86XK_MonBrightnessDown, spawn,       SHCMD("brightnessctl s 10%-; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%") },
 	//sound
 	{ Mod1Mask,                     XK_KP_Add,     spawn,                  SHCMD(VOLUP) },
 	{0 ,                            XF86XK_AudioRaiseVolume,spawn,         SHCMD(VOLUP) },
