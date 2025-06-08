@@ -963,6 +963,9 @@ static const Key keys[] = {
 	// screen brightness
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,       SHCMD("brightnessctl s 10%+; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%") },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,       SHCMD("brightnessctl s 10%-; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%") },
+	// keyboard brightness
+	{ 0,                            XF86XK_KbdBrightnessUp,   spawn,       SHCMD("brightnessctl -d *kbd_backlight set 25%+") },
+	{ 0,                            XF86XK_KbdBrightnessDown, spawn,       SHCMD("brightnessctl -d *kbd_backlight set 25%-") },
 	//sound
 	{ Mod1Mask,                     XK_KP_Add,     spawn,                  SHCMD(VOLUP) },
 	{0 ,                            XF86XK_AudioRaiseVolume,spawn,         SHCMD(VOLUP) },
