@@ -980,13 +980,23 @@ static const Key keys[] = {
 	{ Mod1Mask,                     XK_KP_End,     spawn,                  SHCMD("pactl set-source-mute mic01-processed toggle; kill -44 $(pidof dwmblocks)") },
 	{ Mod1Mask,                     XK_KP_Down,    spawn,                  SHCMD("pactl set-source-mute mic02-processed toggle; kill -44 $(pidof dwmblocks)") },
 	// notifications
-	{ MODKEY,                     	XK_n,   	spawn,                 SHCMD("dunstctl set-paused toggle; kill -43 $(pidof dwmblocks)") },
+	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD("dunstctl set-paused toggle; kill -43 $(pidof dwmblocks)") },
+	// apps launcher
+	{ MODKEY,                     	XK_a,   		spawn,                 SHCMD("notes") },
+	{ MODKEY,                     	XK_q,   		spawn,                 SHCMD("gpt") },
+	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend") },
+	{ MODKEY,                     	XK_d,   		spawn,                 SHCMD("gco") },
+	{ MODKEY,                     	XK_g,   		spawn,                 SHCMD("gdemo") },
+	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
+	{ MODKEY,                     	XK_h,   		spawn,                 SHCMD("spotify") },
+	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("brm") },
+	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("sd") },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
 	{ MODKEY,                       XK_s,          rioresize,              {0} },
 	#endif // RIODRAW_PATCH
-	{ MODKEY,                       XK_b,          togglebar,              {0} },
+	{ MODKEY|ShiftMask,                       XK_b,          togglebar,              {0} },
 	#if TOGGLETOPBAR_PATCH
 	{ MODKEY|ShiftMask,             XK_b,          toggletopbar,           {0} },
 	#endif // TOGGLETOPBAR_PATCH
@@ -1038,13 +1048,15 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_k,          pushup,                 {0} },
 	#endif // PUSH_PATCH / PUSH_NO_MASTER_PATCH
 	{ MODKEY,                       XK_i,          incnmaster,             {.i = +1 } },
-	{ MODKEY,                       XK_d,          incnmaster,             {.i = -1 } },
+	{ MODKEY,                       XK_u,          incnmaster,             {.i = -1 } },
 	#if FLEXTILE_DELUXE_LAYOUT
 	{ MODKEY|ControlMask,           XK_i,          incnstack,              {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_u,          incnstack,              {.i = -1 } },
 	#endif // FLEXTILE_DELUXE_LAYOUT
 	{ MODKEY,                       XK_KP_Add,          setmfact,               {.f = +0.05} },
 	{ MODKEY,                       XK_KP_Subtract,     setmfact,               {.f = -0.05} },
+	{ MODKEY,                       XK_equal,     		setmfact,               {.f = +0.05} },
+	{ MODKEY,                       XK_parenright,      setmfact,               {.f = -0.05} },
 	#if CFACTS_PATCH
 	{ MODKEY|ShiftMask,             XK_h,          setcfact,               {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,          setcfact,               {.f = -0.25} },
@@ -1159,7 +1171,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_F5,         xrdb,                   {.v = NULL } },
 	#endif // XRDB_PATCH
 	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
 	#if COLUMNS_LAYOUT
 	{ MODKEY,                       XK_c,          setlayout,              {.v = &layouts[3]} },
@@ -1201,7 +1212,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,          unfloatvisible,         {.v = &layouts[0]} },
 	#endif // UNFLOATVISIBLE_PATCH
 	#if TOGGLEFULLSCREEN_PATCH
-	{ MODKEY,                       XK_y,          togglefullscreen,       {0} },
+	{ MODKEY,                       XK_f,          togglefullscreen,       {0} },
 	#endif // TOGGLEFULLSCREEN_PATCH
 	#if !FAKEFULLSCREEN_PATCH && FAKEFULLSCREEN_CLIENT_PATCH
 	{ MODKEY|ShiftMask,             XK_y,          togglefakefullscreen,   {0} },
@@ -1364,7 +1375,7 @@ static const Key keys[] = {
 	#endif // FLOATPOS_PATCH
 	#if SETBORDERPX_PATCH
 	{ MODKEY,           			XK_KP_Insert,    	setborderpx,           	{.i = 0 } },
-	{ MODKEY,           			XK_KP_Left,       	setborderpx,            {.i = 4 } },
+	{ MODKEY,           			XK_KP_Left,       	setborderpx,            {.i = 1 } },
 	#endif // SETBORDERPX_PATCH
 	#if CYCLELAYOUTS_PATCH
 	{ MODKEY|ShiftMask, 			XK_twosuperior,      cyclelayout,            {.i = -1 } },
