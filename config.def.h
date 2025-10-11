@@ -536,7 +536,7 @@ static const Rule rules[] = {
 	RULE(.class = "Caprine", .tags = 1 << 5)
 	RULE(.class = "ViberPC", .tags = 1 << 5)
 	RULE(.class = "obs", .tags = 1 << 6)
-
+	RULE(.class = "SpeedCrunch", .isfloating = 1)
 
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
@@ -991,6 +991,7 @@ static const Key keys[] = {
 	{ MODKEY,                     	XK_h,   		spawn,                 SHCMD("spotify") },
 	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("brm") },
 	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("sd") },
+	{ MODKEY,                     	XK_z,   		spawn,                 SHCMD("speedcrunch") },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
