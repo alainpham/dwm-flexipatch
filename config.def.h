@@ -9,7 +9,7 @@
 static const unsigned int borderpx       = 0;   /* border pixel of windows */
 static const int corner_radius           = 10;
 #else
-static const unsigned int borderpx       = 4;   /* border pixel of windows */
+static const unsigned int borderpx       = 2;   /* border pixel of windows */
 #endif // ROUNDED_CORNERS_PATCH
 #if BAR_BORDER_PATCH
 /* This allows the bar border size to be explicitly set separately from borderpx.
@@ -196,8 +196,8 @@ static char normfloatcolor[]             = "#555753";
 
 static char selfgcolor[]                 = "#eeeeec";
 static char selbgcolor[]                 = "#888a85";
-static char selbordercolor[]             = "#fcaf3e";
-static char selfloatcolor[]              = "#fcaf3e";
+static char selbordercolor[]             = "#dadada";
+static char selfloatcolor[]              = "#dadada";
 
 static char titlenormfgcolor[]           = "#eeeeec";
 static char titlenormbgcolor[]           = "#2e3436";
@@ -206,8 +206,8 @@ static char titlenormfloatcolor[]        = "#555753";
 
 static char titleselfgcolor[]            = "#eeeeec";
 static char titleselbgcolor[]            = "#555753";
-static char titleselbordercolor[]        = "#fcaf3e";
-static char titleselfloatcolor[]         = "#fcaf3e";
+static char titleselbordercolor[]        = "#dadada";
+static char titleselfloatcolor[]         = "#dadada";
 
 static char tagsnormfgcolor[]            = "#eeeeec";
 static char tagsnormbgcolor[]            = "#2e3436";
@@ -216,8 +216,8 @@ static char tagsnormfloatcolor[]         = "#555753";
 
 static char tagsselfgcolor[]             = "#eeeeec";
 static char tagsselbgcolor[]             = "#ce5c00";
-static char tagsselbordercolor[]         = "#fcaf3e";
-static char tagsselfloatcolor[]          = "#fcaf3e";
+static char tagsselbordercolor[]         = "#dadada";
+static char tagsselfloatcolor[]          = "#dadada";
 
 static char hidnormfgcolor[]             = "#eeeeec";
 static char hidselfgcolor[]              = "#eeeeec";
@@ -226,8 +226,8 @@ static char hidselbgcolor[]              = "#888a85";
 
 static char urgfgcolor[]                 = "#eeeeec";
 static char urgbgcolor[]                 = "#2e3436";
-static char urgbordercolor[]             = "#fcaf3e";
-static char urgfloatcolor[]              = "#fcaf3e";
+static char urgbordercolor[]             = "#dadada";
+static char urgfloatcolor[]              = "#dadada";
 
 #if RENAMED_SCRATCHPADS_PATCH
 static char scratchselfgcolor[]          = "#FFF7D4";
@@ -992,6 +992,7 @@ static const Key keys[] = {
 	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("brm") },
 	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("sd") },
 	{ MODKEY,                     	XK_z,   		spawn,                 SHCMD("speedcrunch") },
+	{ MODKEY,                     	XK_asterisk,   	spawn,                 SHCMD("virt-manager") },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
