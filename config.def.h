@@ -477,7 +477,7 @@ static char tagicons[][NUMTAGS][MAX_TAGLEN] =
 static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
 {
-	[DEFAULT_TAGS]        = { "", "", "󰑣","󱄟" , "󰭻", "󰘂", "", "8", "9" },
+	[DEFAULT_TAGS]        = { "", "", "󰑣","󱄟" , "󰭻", "󰘂", "", "", "9" },
 	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
@@ -985,8 +985,8 @@ static const Key keys[] = {
 	{ MODKEY,                     	XK_a,   		spawn,                 SHCMD("notes") },
 	{ MODKEY,                     	XK_q,   		spawn,                 SHCMD("gpt") },
 	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend") },
-	{ MODKEY,                     	XK_d,   		spawn,                 SHCMD("gco") },
-	{ MODKEY,                     	XK_g,   		spawn,                 SHCMD("gdemo") },
+	{ MODKEY,                     	XK_d,   		spawn,                 SHCMD("gco") }, //Product overview
+	{ MODKEY,                     	XK_g,   		spawn,                 SHCMD("gdemo") }, // Demo environment
 	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
 	{ MODKEY,                     	XK_h,   		spawn,                 SHCMD("spotify") },
 	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("brm") },
