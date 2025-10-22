@@ -28,10 +28,10 @@ static const int scalepreview            = 4;        /* Tag preview scaling */
 static int nomodbuttons                  = 1;   /* allow client mouse button bindings that have no modifier */
 #endif // NO_MOD_BUTTONS_PATCH
 #if VANITYGAPS_PATCH
-static const unsigned int gappih         = 8;  /* horiz inner gap between windows */
-static const unsigned int gappiv         = 8;  /* vert inner gap between windows */
-static const unsigned int gappoh         = 8;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 8;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappih         = 6;  /* horiz inner gap between windows */
+static const unsigned int gappiv         = 6;  /* vert inner gap between windows */
+static const unsigned int gappoh         = 6;  /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov         = 6;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 #endif // VANITYGAPS_PATCH
 #if AUTOSTART_PATCH
@@ -668,7 +668,7 @@ static const BarRule barrules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 #if FLEXTILE_DELUXE_LAYOUT
 static const int nstack      = 0;    /* number of clients in primary stack area */
