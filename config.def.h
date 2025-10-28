@@ -188,7 +188,7 @@ Chameleon	#8ae234	#73d216	#4e9a06
 Sky Blue	#729fcf	#3465a4	#204a87
 Plum		#ad7fa8	#75507b	#5c3566
 Scarlet Red	#ef2929	#cc0000	#a40000
-Aluminium	#eeeeec	#d3d7cf	#010201ff
+Aluminium	#eeeeec	#d3d7cf	#010201
 			#888a85	#555753	#2e3436
 */
 
@@ -202,7 +202,7 @@ static char selbgcolor[]                 = "#888a85";
 static char selbordercolor[]             = "#dadada";
 static char selfloatcolor[]              = "#dadada";
 
-static char titlenormfgcolor[]           = "#eeeeec";
+static char titlenormfgcolor[]           = "#888a85";
 static char titlenormbgcolor[]           = "#2e3436";
 static char titlenormbordercolor[]       = "#555753";
 static char titlenormfloatcolor[]        = "#555753";
