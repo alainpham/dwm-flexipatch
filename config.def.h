@@ -969,12 +969,6 @@ static const Key on_empty_keys[] = {
 };
 #endif // ON_EMPTY_KEYS_PATCH
 
-<<<<<<< HEAD
-#include <X11/XF86keysym.h>
-
-#define VOLUP "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id +5%; kill -44 $(pidof dwmblocks)"
-#define VOLDN "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id -5%; kill -44 $(pidof dwmblocks)"
-=======
 #if XRESOURCES_PATCH
 /*
 * Xresources preferences to load at startup.
@@ -1080,7 +1074,11 @@ ResourcePref resources[] = {
 	#endif // BAR_LTSYMBOL_SCHEME_PATCH
 };
 #endif // XRESOURCES_PATCH
->>>>>>> upstream/master
+
+#include <X11/XF86keysym.h>
+
+#define VOLUP "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id +5%; kill -44 $(pidof dwmblocks)"
+#define VOLDN "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id -5%; kill -44 $(pidof dwmblocks)"
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
@@ -1324,16 +1322,11 @@ static const Key keys[] = {
 	{ MODKEY|Mod5Mask|Mod1Mask,     XK_Tab,        rotatelayoutaxis,       {.i = -4 } },   /* flextile, 4 = secondary stack axis */
 	{ MODKEY|ControlMask,           XK_Return,     mirrorlayout,           {0} },          /* flextile, flip master and stack areas */
 	#endif // FLEXTILE_DELUXE_LAYOUT
-<<<<<<< HEAD
 	// { MODKEY,                       XK_space,      setlayout,              {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefloating,         {0} },
-=======
-	{ MODKEY,                       XK_space,      setlayout,              {0} },
-	{ MODKEY|ShiftMask,             XK_space,      togglefloating,         {0} },
 	#if ALWAYSONTOP_PATCH
 	{ MODKEY|ShiftMask,             XK_space,      togglealwaysontop,      {0} },
 	#endif // ALWAYSONTOP_PATCH
->>>>>>> upstream/master
 	#if MAXIMIZE_PATCH
 	{ MODKEY|ControlMask|ShiftMask, XK_h,          togglehorizontalmax,    {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_l,          togglehorizontalmax,    {0} },
