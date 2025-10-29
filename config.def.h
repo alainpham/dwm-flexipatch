@@ -1110,8 +1110,14 @@ static const Key keys[] = {
 	{ 0,                     		XF86XK_AudioMute,    spawn,            SHCMD("pactl set-sink-mute from-desktop toggle; kill -44 $(pidof dwmblocks)") },
 
 	{ Mod1Mask,                     XK_KP_Begin,   spawn,                  SHCMD("pactl set-sink-mute from-caller toggle; kill -44 $(pidof dwmblocks)") },
+	// mute mics
 	{ Mod1Mask,                     XK_KP_End,     spawn,                  SHCMD("pactl set-source-mute mic01-processed toggle; kill -44 $(pidof dwmblocks)") },
 	{ Mod1Mask,                     XK_KP_Down,    spawn,                  SHCMD("pactl set-source-mute mic02-processed toggle; kill -44 $(pidof dwmblocks)") },
+	{ 0,                     		XF86XK_AudioMicMute,	spawn,		   SHCMD("pactl set-source-mute mic01-processed toggle; kill -44 $(pidof dwmblocks)") },
+	{ 0,                     		XF86XK_AudioMicMute,    spawn,		   SHCMD("pactl set-source-mute mic02-processed toggle; kill -44 $(pidof dwmblocks)") },
+	{ 0,                     		XF86XK_Display,    		spawn,		   SHCMD("mon cp && sleep 3 && ~/.fehbg") },
+	{ MODKEY,						XF86XK_Display,    		spawn,		   SHCMD("mon && sleep 3 && ~/.fehbg") },
+	{ MODKEY|ShiftMask,				XF86XK_Display,    		spawn,		   SHCMD("mon la && sleep 3 && ~/.fehbg") },
 	// notifications
 	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD("dunstctl set-paused toggle; kill -43 $(pidof dwmblocks)") },
 	// apps launcher
