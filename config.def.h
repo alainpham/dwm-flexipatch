@@ -1117,7 +1117,7 @@ static const Key keys[] = {
 	{ 0,                     		XF86XK_AudioMicMute,    spawn,		   SHCMD("pactl set-source-mute mic02-processed toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0,                     		XF86XK_Display,    		spawn,		   SHCMD("mon cp && sleep 3 && ~/.fehbg") },
 	{ MODKEY,						XF86XK_Display,    		spawn,		   SHCMD("mon && sleep 3 && ~/.fehbg") },
-	{ MODKEY|ShiftMask,				XF86XK_Display,    		spawn,		   SHCMD("mon la && sleep 3 && ~/.fehbg") },
+	{ Mod1Mask,						XF86XK_Display,    		spawn,		   SHCMD("mon la && sleep 3 && ~/.fehbg") },
 	// notifications
 	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD("dunstctl set-paused toggle; kill -43 $(pidof dwmblocks)") },
 	// apps launcher
