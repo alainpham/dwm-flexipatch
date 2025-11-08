@@ -63,8 +63,8 @@ static const int toptab                  = False;               /* False means b
 static const int bar_height              = 0;   /* 0 means derive from font, >= 1 explicit height */
 #endif // BAR_HEIGHT_PATCH
 #if BAR_PADDING_PATCH
-static const int vertpad                 = 6;  /* vertical padding of bar */
-static const int sidepad                 = 6;  /* horizontal padding of bar */
+static const int vertpad                 = 3;  /* vertical padding of bar */
+static const int sidepad                 = 3;  /* horizontal padding of bar */
 #endif // BAR_PADDING_PATCH
 #if BAR_WINICON_PATCH
 #define ICONSIZE 20    /* icon size */

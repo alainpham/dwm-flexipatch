@@ -291,7 +291,7 @@
 /* This patch adds a border around the status bar(s) just like the border of client windows.
  * https://codemadness.org/paste/dwm-border-bar.patch
  */
-#define BAR_BORDER_PATCH 1
+#define BAR_BORDER_PATCH 0
 
 /* Optional addon for the border patch. This makes it so that the bar border is drawn using
  * the background colour of the bar as opposed to the border colour. This allows for the
@@ -374,7 +374,7 @@
 /* This patch adds vertical and horizontal space between the statusbar and the edge of the screen.
  * https://dwm.suckless.org/patches/barpadding/
  */
-#define BAR_PADDING_PATCH 0
+#define BAR_PADDING_PATCH 1
 
 /* Same as barpadding patch but specifically tailored for the vanitygaps patch in that the outer
  * bar padding is derived from the vanitygaps settings. In addition to this the bar padding is
