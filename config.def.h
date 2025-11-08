@@ -1327,7 +1327,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Return,     mirrorlayout,           {0} },          /* flextile, flip master and stack areas */
 	#endif // FLEXTILE_DELUXE_LAYOUT
 	// { MODKEY,                       XK_space,      setlayout,              {0} },
-	{ MODKEY|ShiftMask,             XK_f,      togglefloating,         {0} },
+	{ MODKEY,                       XK_p,          togglefloating,         {0} },
 	#if ALWAYSONTOP_PATCH
 	{ MODKEY|ShiftMask,             XK_space,      togglealwaysontop,      {0} },
 	#endif // ALWAYSONTOP_PATCH
