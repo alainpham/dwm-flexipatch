@@ -440,7 +440,8 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 #if BAR_LAUNCHER_PATCH
 static const Launcher launchers[] = {
 	/* icon to display      command        */
-	{ "surf",               CMD("surf", "duckduckgo.com") },
+	{ "  |",               CMD("jgmenu_run") },
+
 };
 #endif // BAR_LAUNCHER_PATCH
 
