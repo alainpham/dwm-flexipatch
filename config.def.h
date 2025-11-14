@@ -938,7 +938,7 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browser[]   = { "google-chrome", NULL };
+static const char *browser[]   = { "google-chrome-stable", NULL };
 static const char *filemanager[] = { "thunar", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
 static const char *winshot[] = { "/usr/local/bin/winshot.sh", NULL };
