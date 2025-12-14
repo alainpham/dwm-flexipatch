@@ -1124,7 +1124,7 @@ static const Key keys[] = {
 	// apps launcher
 	{ MODKEY,                     	XK_a,   		spawn,                 SHCMD("notes") },
 	{ MODKEY,                     	XK_q,   		spawn,                 SHCMD("gpt") },
-	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend") },
+	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend_app") },
 	{ MODKEY,                     	XK_d,   		spawn,                 SHCMD("gco") }, //Product overview
 	{ MODKEY,                     	XK_g,   		spawn,                 SHCMD("gdemo") }, // Demo environment
 	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
