@@ -1084,7 +1084,8 @@ static const Key keys[] = {
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
-	{ MODKEY,                       XK_space,      spawn,                  {.v = dmenucmd } },
+	// { MODKEY,                       XK_space,      spawn,                  {.v = dmenucmd } },
+	{ MODKEY,                       XK_space,      spawn,                  SHCMD("rofi -show combi") },
 	{ MODKEY,                       XK_x,          spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_w,          spawn,                  {.v = browser } },
 	{ MODKEY,                       XK_e,          spawn,                  {.v = filemanager } },
