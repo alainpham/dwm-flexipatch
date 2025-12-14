@@ -1086,7 +1086,7 @@ static const Key keys[] = {
 	#endif // KEYMODES_PATCH
 	// { MODKEY,                       XK_space,      spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_space,      spawn,                  SHCMD("rofi -show combi") },
-	{ MODKEY,                     	XK_s,   	   spawn,                  SHCMD("systemctl suspend") },
+	{ MODKEY,                       XK_exclam,     spawn,                  SHCMD("systemctl suspend") },
 	{ MODKEY,                       XK_x,          spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_w,          spawn,                  {.v = browser } },
 	{ MODKEY,                       XK_e,          spawn,                  {.v = filemanager } },
@@ -1124,6 +1124,7 @@ static const Key keys[] = {
 	// apps launcher
 	{ MODKEY,                     	XK_a,   		spawn,                 SHCMD("notes") },
 	{ MODKEY,                     	XK_q,   		spawn,                 SHCMD("gpt") },
+	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend") },
 	{ MODKEY,                     	XK_d,   		spawn,                 SHCMD("gco") }, //Product overview
 	{ MODKEY,                     	XK_g,   		spawn,                 SHCMD("gdemo") }, // Demo environment
 	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
