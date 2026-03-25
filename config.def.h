@@ -1078,6 +1078,8 @@ ResourcePref resources[] = {
 
 #define VOLUP "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id +5%; kill -44 $(pidof dwmblocks)"
 #define VOLDN "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id -5%; kill -44 $(pidof dwmblocks)"
+#define BRIGHTNESSUP "brightnessctl s 10%+; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%"
+#define BRIGHTNESSDN "brightnessctl s 10%-; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%"
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
@@ -1095,8 +1097,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,          spawn,                  {.v = screenrec } },
 	{ MODKEY,                       XK_l,          spawn,                  {.v = slock } },
 	// screen brightness
-	{ 0,                            XF86XK_MonBrightnessUp,   spawn,       SHCMD("brightnessctl s 10%+; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%") },
-	{ 0,                            XF86XK_MonBrightnessDown, spawn,       SHCMD("brightnessctl s 10%-; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%") },
+	{ 0,                            XF86XK_MonBrightnessUp,   	spawn,		SHCMD(BRIGHTNESSUP) },
+	{ 0,                            XF86XK_MonBrightnessDown, 	spawn,		SHCMD(BRIGHTNESSDN) },
+	{ MODKEY|Mod1Mask,				XK_KP_Add,   				spawn,		SHCMD(BRIGHTNESSUP) },
+	{ MODKEY|Mod1Mask,				XK_KP_Subtract,				spawn,		SHCMD(BRIGHTNESSDN) },
 	// keyboard brightness
 	{ 0,                            XF86XK_KbdBrightnessUp,   spawn,       SHCMD("brightnessctl -d *kbd_backlight set 25%+") },
 	{ 0,                            XF86XK_KbdBrightnessDown, spawn,       SHCMD("brightnessctl -d *kbd_backlight set 25%-") },
