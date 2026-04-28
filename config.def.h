@@ -1076,8 +1076,8 @@ ResourcePref resources[] = {
 
 #include <X11/XF86keysym.h>
 
-#define VOLUP "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id +5%; kill -44 $(pidof dwmblocks)"
-#define VOLDN "cspeaker_module_id=$(pactl list short modules | grep \"sink_name=from-desktop\" | awk '{print $1}'); cspeaker_sink_input_id=$(pactl -f json list sink-inputs | jq -r \".[] | select(.owner_module == \\\"$cspeaker_module_id\\\") | .sink\"); pactl set-sink-volume $cspeaker_sink_input_id -5%; kill -44 $(pidof dwmblocks)"
+#define VOLUP "vol up"
+#define VOLDN "vol dn"
 #define BRIGHTNESSUP "brightnessctl s 10%+; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%"
 #define BRIGHTNESSDN "brightnessctl s 10%-; dunstify -r 5123 Brightness $(($(brightnessctl g)*100/$(brightnessctl m)))%"
 
