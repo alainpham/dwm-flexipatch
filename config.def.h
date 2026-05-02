@@ -1125,14 +1125,12 @@ static const Key keys[] = {
 	{ MODKEY,                     	XK_a,   		spawn,                 SHCMD("notes") },
 	{ MODKEY,                     	XK_q,   		spawn,                 SHCMD("gpt") },
 	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend_app") },
-	{ MODKEY,                     	XK_d,   		spawn,                 SHCMD("gco") }, //Product overview
-	{ MODKEY,                     	XK_g,   		spawn,                 SHCMD("gdemo") }, // Demo environment
 	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
 	{ MODKEY,                     	XK_h,   		spawn,                 SHCMD("spotify") },
-	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("brm") },
-	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("sd") },
-	{ MODKEY,                     	XK_z,   		spawn,                 SHCMD("speedcrunch") },
-	{ MODKEY,                     	XK_asterisk,   	spawn,                 SHCMD("virt-manager") },
+	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("st bluetui") }, // bluetui
+	{ MODKEY,                     	XK_asterisk,   	spawn,                 SHCMD("st nmtui") },
+	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("virt-manager") }, // imagegenerator
+	{ MODKEY,                     	XK_z,   		spawn,                 SHCMD("speedcrunch") }, //calculator
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
@@ -1313,8 +1311,8 @@ static const Key keys[] = {
 	#if XRDB_PATCH || XRESOURCES_PATCH
 	{ MODKEY|ShiftMask,             XK_F5,         xrdb,                   {.v = NULL } },
 	#endif // XRDB_PATCH | XRESOURCES_PATCH
-	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
-	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
+	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} }, //tile
+	{ MODKEY,                       XK_g,          setlayout,              {.v = &layouts[2]} }, //monocle
 	#if COLUMNS_LAYOUT
 	{ MODKEY,                       XK_c,          setlayout,              {.v = &layouts[3]} },
 	#endif // COLUMNS_LAYOUT
