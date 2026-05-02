@@ -1239,6 +1239,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask|ControlMask, XK_a,          updateinset,            {.v = &default_inset } },
 	#endif // INSETS_PATCH
 	{ MODKEY,                       XK_Return,     zoom,                   {0} },
+	{ MODKEY,                       XK_KP_Enter,   zoom,                   {0} },
 	#if VANITYGAPS_PATCH
 	/*{ MODKEY|Mod4Mask,              XK_u,          incrgaps,               {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,          incrgaps,               {.i = -1 } },
