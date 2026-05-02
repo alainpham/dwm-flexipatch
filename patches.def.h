@@ -1133,7 +1133,7 @@
 /* This patch allows border pixels to be changed during runtime.
  * https://dwm.suckless.org/patches/setborderpx/
  */
-#define SETBORDERPX_PATCH 1
+#define SETBORDERPX_PATCH 0
 
 /* Combines shifttag and shiftview. Basically moves the window to the next/prev tag and follows it.
  * Also see the focusadjacenttag patch.

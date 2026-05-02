@@ -1087,6 +1087,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_exclam,     spawn,                  SHCMD("systemctl suspend") },
 	{ MODKEY,                       XK_x,          spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_w,          spawn,                  SHCMD("google-chrome-stable") },
+	{ 0,                            XF86XK_HomePage, spawn,                SHCMD("google-chrome-stable") },
 	{ MODKEY,                       XK_e,          spawn,                  SHCMD("thunar") },
 	{ 0,                            XK_Print,      spawn,                  SHCMD("fullscreenshot") },
 	{ MODKEY,                       XK_Print,      spawn,                  SHCMD("flameshot gui") },
@@ -1132,6 +1133,7 @@ static const Key keys[] = {
 	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD("st nmtui") }, //
 	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("virt-manager") }, // imagegenerator
 	{ MODKEY,                     	XK_z,   		spawn,                 SHCMD("speedcrunch") }, //calculator
+	{ 0,                     		XF86XK_Calculator,   		spawn,	   SHCMD("speedcrunch") }, //calculator
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
@@ -1379,10 +1381,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_agrave,     view,                   {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_agrave,     tag,                    {.ui = ~0 } },
 	#endif // SCRATCHPAD_ALT_1_PATCH
-	{ MODKEY,                       XK_comma,      focusmon,               {.i = -1 } },
-	{ MODKEY,                       XK_semicolon,  focusmon,               {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,      tagmon,                 {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_semicolon,  tagmon,                 {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_Left,      focusmon,               {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_Right,  focusmon,               {.i = +1 } },
+	{ MODKEY|ControlMask|ShiftMask,	XK_Left,      tagmon,                 {.i = -1 } },
+	{ MODKEY|ControlMask|ShiftMask, XK_Right,  tagmon,                 	{.i = +1 } },
 	#if FOCUSADJACENTTAG_PATCH
 	{ MODKEY,                       XK_Left,       viewtoleft,             {0} }, // note keybinding conflict with focusdir
 	{ MODKEY,                       XK_Right,      viewtoright,            {0} }, // note keybinding conflict with focusdir
