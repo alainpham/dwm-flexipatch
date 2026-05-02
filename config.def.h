@@ -1151,8 +1151,8 @@ static const Key keys[] = {
 	STACKKEYS(MODKEY,                              focus)
 	STACKKEYS(MODKEY|ShiftMask,                    push)
 	#else
-	{ MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
-	{ MODKEY,                       XK_k,          focusstack,             {.i = -1 } },
+	// { MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
+	// { MODKEY,                       XK_k,          focusstack,             {.i = -1 } },
 	{ Mod1Mask,                     XK_Tab,        focusstack,             {.i = +1 } },
 	{ Mod1Mask|ShiftMask,           XK_Tab,        focusstack,             {.i = -1 } },
 	#endif // STACKER_PATCH
@@ -1188,8 +1188,8 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_j,          pushdown,               {0} },
 	{ MODKEY|ControlMask,           XK_k,          pushup,                 {0} },
 	#endif // PUSH_PATCH / PUSH_NO_MASTER_PATCH
-	{ MODKEY,                       XK_i,          incnmaster,             {.i = +1 } },
-	{ MODKEY,                       XK_u,          incnmaster,             {.i = -1 } },
+	// { MODKEY,                       XK_i,          incnmaster,             {.i = +1 } },
+	// { MODKEY,                       XK_u,          incnmaster,             {.i = -1 } },
 	#if FLEXTILE_DELUXE_LAYOUT
 	{ MODKEY|ControlMask,           XK_i,          incnstack,              {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_u,          incnstack,              {.i = -1 } },
