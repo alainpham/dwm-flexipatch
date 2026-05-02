@@ -545,7 +545,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Google-chrome", .instance = "crx_nngceckbapebfimnlniiiahkandclblb", .isfloating = 1)
+	RULE(.class = "Google-chrome", .instance = "crx_nngceckbapebfimnlniiiahkandclblb", .isfloating = 1) // bitwarden
 	RULE(.class = "Slack", .tags = 1 << 4)
 	RULE(.class = "zoom", .tags = 1 << 5)
 	RULE(.class = "teams-for-linux", .tags = 1 << 5)
@@ -553,6 +553,8 @@ static const Rule rules[] = {
 	RULE(.class = "ViberPC", .tags = 1 << 5)
 	RULE(.class = "obs", .tags = 1 << 6)
 	RULE(.class = "SpeedCrunch", .isfloating = 1)
+	RULE(.class = "st", .title = "nmtui" , .isfloating = 1)
+	RULE(.class = "st", .title = "bluetui" , .isfloating = 1)
 
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
@@ -938,7 +940,6 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browser[]   = { "google-chrome-stable", NULL };
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
@@ -1120,7 +1121,7 @@ static const Key keys[] = {
 	{ MODKEY,						XF86XK_Display,    		spawn,		   SHCMD("mon && sleep 3 && ~/.fehbg") },
 	{ Mod1Mask,						XF86XK_Display,    		spawn,		   SHCMD("mon la && sleep 3 && ~/.fehbg") },
 	// notifications
-	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD("dunstctl set-paused toggle; kill -43 $(pidof dwmblocks)") },
+	{ MODKEY,                     	XK_asterisk,   			spawn,			SHCMD("dunstctl set-paused toggle; kill -43 $(pidof dwmblocks)") },
 	// apps launcher
 	{ MODKEY,                     	XK_a,   		spawn,                 SHCMD("notes") },
 	{ MODKEY,                     	XK_q,   		spawn,                 SHCMD("gpt") },
@@ -1128,7 +1129,7 @@ static const Key keys[] = {
 	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
 	{ MODKEY,                     	XK_h,   		spawn,                 SHCMD("spotify") },
 	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("st bluetui") }, // bluetui
-	{ MODKEY,                     	XK_asterisk,   	spawn,                 SHCMD("st nmtui") },
+	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD("st nmtui") }, //
 	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("virt-manager") }, // imagegenerator
 	{ MODKEY,                     	XK_z,   		spawn,                 SHCMD("speedcrunch") }, //calculator
 	#if RIODRAW_PATCH
@@ -1328,7 +1329,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Return,     mirrorlayout,           {0} },          /* flextile, flip master and stack areas */
 	#endif // FLEXTILE_DELUXE_LAYOUT
 	// { MODKEY,                       XK_space,      setlayout,              {0} },
-	{ MODKEY,                       XK_p,          togglefloating,         {0} },
+	{ MODKEY,                       XK_d,          togglefloating,         {0} },
 	#if ALWAYSONTOP_PATCH
 	{ MODKEY|ShiftMask,             XK_space,      togglealwaysontop,      {0} },
 	#endif // ALWAYSONTOP_PATCH
