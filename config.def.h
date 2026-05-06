@@ -1126,7 +1126,7 @@ static const Key keys[] = {
 	// apps launcher
 	{ MODKEY,                     	XK_a,   		spawn,                 SHCMD("notes") },
 	{ MODKEY,                     	XK_q,   		spawn,                 SHCMD("gpt") },
-	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend_app") },
+	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend") },
 	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
 	{ MODKEY,                     	XK_h,   		spawn,                 SHCMD("spotify") },
 	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("st bluetui") }, // bluetui
