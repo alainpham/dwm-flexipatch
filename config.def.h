@@ -553,8 +553,8 @@ static const Rule rules[] = {
 	RULE(.class = "ViberPC", .tags = 1 << 5)
 	RULE(.class = "obs", .tags = 1 << 6)
 	RULE(.class = "SpeedCrunch", .isfloating = 1)
-	RULE(.class = "st", .title = "nmtui" , .isfloating = 1)
-	RULE(.class = "st", .title = "bluetui" , .isfloating = 1)
+	RULE(.title = "nmtui" , .isfloating = 1)
+	RULE(.title = "bluetui" , .isfloating = 1)
 
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
@@ -939,7 +939,8 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
-static const char *termcmd[]  = { "st", NULL };
+#define TERMINAL "x-terminal-emulator"
+static const char *termcmd[]  = { TERMINAL, NULL };
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
@@ -1129,8 +1130,8 @@ static const Key keys[] = {
 	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend") },
 	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
 	{ MODKEY,                     	XK_h,   		spawn,                 SHCMD("spotify") },
-	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD("st bluetui") }, // bluetui
-	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD("st nmtui") }, //
+	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD(TERMINAL " -t bluetui -e bluetui") }, // bluetui
+	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD(TERMINAL " -t nmtui -e nmtui") }, //
 	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("virt-manager") }, // imagegenerator
 	{ MODKEY,                     	XK_z,   		spawn,                 SHCMD("speedcrunch") }, //calculator
 	{ 0,                     		XF86XK_Calculator,   		spawn,	   SHCMD("speedcrunch") }, //calculator
