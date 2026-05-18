@@ -547,7 +547,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "Google-chrome", .instance = "crx_nngceckbapebfimnlniiiahkandclblb", .isfloating = 1) // bitwarden
 	RULE(.class = "Slack", .tags = 1 << 4)
-	RULE(.class = "zoom", .tags = 1 << 5)
+	RULE(.class = "zoom", .tags = 1 << 5, .isfloating = 1)
 	RULE(.class = "teams-for-linux", .tags = 1 << 5)
 	RULE(.class = "Caprine", .tags = 1 << 5)
 	RULE(.class = "ViberPC", .tags = 1 << 5)
