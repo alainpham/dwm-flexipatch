@@ -939,8 +939,8 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
-#define TERMINAL "x-terminal-emulator"
-static const char *termcmd[]  = { TERMINAL, NULL };
+#define XTERMINAL "x-terminal-emulator"
+static const char *termcmd[]  = { XTERMINAL, NULL };
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
@@ -1130,8 +1130,8 @@ static const Key keys[] = {
 	{ MODKEY,                     	XK_s,   		spawn,                 SHCMD("localsend") },
 	{ MODKEY,                     	XK_y,   		spawn,                 SHCMD("youtube") },
 	{ MODKEY,                     	XK_h,   		spawn,                 SHCMD("spotify") },
-	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD(TERMINAL " -t bluetui -e bluetui") }, // bluetui
-	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD(TERMINAL " -t nmtui -e nmtui") }, //
+	{ MODKEY,                     	XK_b,   		spawn,                 SHCMD(XTERMINAL " -t bluetui -e bluetui") }, // bluetui
+	{ MODKEY,                     	XK_n,   		spawn,                 SHCMD(XTERMINAL " -t nmtui -e nmtui") }, //
 	{ MODKEY,                     	XK_v,   		spawn,                 SHCMD("virt-manager") }, // imagegenerator
 	{ MODKEY,                     	XK_z,   		spawn,                 SHCMD("speedcrunch") }, //calculator
 	{ 0,                     		XF86XK_Calculator,   		spawn,	   SHCMD("speedcrunch") }, //calculator
