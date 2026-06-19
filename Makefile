@@ -62,10 +62,13 @@ endif
 	mkdir -p ${DESTDIR}${PREFIX}/share/xsessions
 	test -f ${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop || cp -n dwm.desktop ${DESTDIR}${PREFIX}/share/xsessions
 	chmod 644 ${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop
+	test -f ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.service || cp -n dwm-session.service ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.service
+	chmod 644 ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.service
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1\
-		${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop
+		${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop\
+		${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.service
 
 .PHONY: all clean dist install uninstall
