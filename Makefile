@@ -63,13 +63,13 @@ endif
 	test -f ${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop || cp -n dwm.desktop ${DESTDIR}${PREFIX}/share/xsessions
 	chmod 644 ${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop
 	mkdir -p ${DESTDIR}${PREFIX}/lib/systemd/user
-	test -f ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.service || cp -n dwm-session.service ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.service
-	chmod 644 ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.service
+	test -f ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target || cp -n dwm-session.service ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target
+	chmod 644 ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1\
 		${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop\
-		${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.service
+		${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target
 
 .PHONY: all clean dist install uninstall
