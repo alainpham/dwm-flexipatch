@@ -63,7 +63,7 @@ endif
 	test -f ${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop || cp -n dwm.desktop ${DESTDIR}${PREFIX}/share/xsessions
 	chmod 644 ${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop
 	mkdir -p ${DESTDIR}${PREFIX}/lib/systemd/user
-	test -f ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target || cp -n dwm-session.service ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target
+	test -f ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target || cp -n dwm-session.target ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target
 	chmod 644 ${DESTDIR}${PREFIX}/lib/systemd/user/dwm-session.target
 
 uninstall:
